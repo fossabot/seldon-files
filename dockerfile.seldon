@@ -1,0 +1,14 @@
+FROM python 3.8-slim
+
+ARG MODEL_NAME
+
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 5000
+
+# Define environment variable
+ENV MODEL_NAME=$MODEL_NAME
+ENV API_TYPE REST
+ENV SERVICE_TYPE MODEL
+ENV PERSISTENCE 0
