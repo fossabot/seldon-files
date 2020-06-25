@@ -3,11 +3,10 @@ FROM python:3.8-slim
 ARG MODEL_NAME
 ARG WEIGHTS_PATH
 
-COPY /tmp/code /app
+COPY . /app
 WORKDIR /app
 RUN apt-get update && apt-get install -y build-essential
 RUN pip install -r requirements.txt
-RUN pip install seldon-core
 EXPOSE 5000
 
 # Define environment variable
@@ -17,4 +16,4 @@ ENV SERVICE_TYPE MODEL
 ENV PERSISTENCE 0
 ENV WEIGHTS_PATH=$WEIGHTS_PATH
 
-CMD exec seldon-core-microservice $MODEL_NAME $API_TYPE --service-type $SERVICE_TYPE --persistence $PERSISTENCE
+CMD exec seldon-core-microservice SeldonModel REST --service-type MODEL --persistence 0
