@@ -4,7 +4,7 @@ steps:
         '-t', '$REPO_NAME', 
         '-t', 'gcr.io/granular-ai/$REPO_NAME:$SHORT_SHA', 
         '-t', 'gcr.io/granular-ai/$REPO_NAME:latest', 
-        '--cache-from', 'gcr.io/granular-ai/$REPO_NAME:lates', 
+        '--cache-from', 'gcr.io/granular-ai/$REPO_NAME:latest', 
         '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/granular-ai/$REPO_NAME:$SHORT_SHA']
