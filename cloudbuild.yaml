@@ -1,12 +1,9 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'docker:latest'
   args: ['build', 
-        '-t', '$REPO_NAME', 
         '-t', 'gcr.io/granular-ai/$REPO_NAME:$SHORT_SHA', 
         '-t', 'gcr.io/granular-ai/$REPO_NAME:latest', 
-        '--cache-from', 'gcr.io/granular-ai/$REPO_NAME:latest', 
+        '--cache-from', 'gcr.io/granular-ai/$REPO_NAME:e1361bb', 
         '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/granular-ai/$REPO_NAME:$SHORT_SHA']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/granular-ai/$REPO_NAME:$latest']
+  args: ['push', 'gcr.io/granular-ai/$REPO_NAME']
