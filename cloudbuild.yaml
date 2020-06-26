@@ -9,3 +9,4 @@ steps:
   - 'NAME=$REPO_NAME'
   - 'BRANCH=$BRANCH_NAME'
   - 'SHORT_SHA=$SHORT_SHA'
+logsBucket: 'gs://gcbblog'    
