@@ -1,12 +1,11 @@
 steps:
-- name: 'docker:latest'
+- name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
   args: ['./build.sh']
-#   - '-c'
-#   - "|" 
-#   - "[[ "$BRANCH_NAME" == "develop" ]] && docker build ."
-#   - "-t gcr.io/granular-ai/$REPO_NAME:$SHORT_SHA"
-#   - "-t gcr.io/granular-ai/$REPO_NAME:latest"
-#   - "--cache-from gcr.io/granular-ai/$REPO_NAME:latest"
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/granular-ai/$REPO_NAME']
+  env:
+  - 'BUILD=$BUILD_ID'
+  - 'PROJECT=$PROJECT_ID'
+  - 'REV=$REVISION_ID'
+  - 'NAME=$REPO_NAME'
+  - 'BRANCH=$BRANCH_NAME'
+  - 'SHORT_SHA=$SHORT_SHA'
