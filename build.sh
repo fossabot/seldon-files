@@ -10,11 +10,11 @@ echo $VERSION
 if [[$BRANCH == 'develop']]
 then
     echo "Building Nightly version"
-    docker build -t gcr.io/granular-ai/$NAME:$SHORT_SHA -t gcr.io/granular-ai/$NAME:nightly --cache-from gcr.io/granular-ai/$NAME:nightly 
+    docker build . -t gcr.io/granular-ai/$NAME:$SHORT_SHA -t gcr.io/granular-ai/$NAME:nightly --cache-from gcr.io/granular-ai/$NAME:nightly 
 done
 else
     echo "Building Stable version"
-    docker build -t gcr.io/granular-ai/$NAME:$SHORT_SHA -t gcr.io/granular-ai/$NAME:latest -t gcr.io/granular-ai/$NAME:stable  -t gcr.io/granular-ai/$NAME:$VERSION --cache-from gcr.io/granular-ai/$NAME:nightly 
+    docker build . -t gcr.io/granular-ai/$NAME:$SHORT_SHA -t gcr.io/granular-ai/$NAME:latest -t gcr.io/granular-ai/$NAME:stable  -t gcr.io/granular-ai/$NAME:$VERSION --cache-from gcr.io/granular-ai/$NAME:nightly 
 done
 fi
     
