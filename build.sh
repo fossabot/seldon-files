@@ -2,8 +2,6 @@
 
 echo "Hello from Bash"
 VERSION=`cat VERSION`
-echo $BUILD
-echo $PROJECT
 echo $BRANCH
 echo $NAME
 echo $VERSION

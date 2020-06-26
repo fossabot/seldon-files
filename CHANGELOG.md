@@ -8,3 +8,10 @@ Released
 =====
 * Added README.md
 * Initial commit
+
+1.0.1
+
+=====
+
+* Base Seldon Image with Dependancy
+* Image tagging with stable, nightly and version

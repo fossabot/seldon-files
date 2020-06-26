@@ -3,9 +3,6 @@ steps:
   entrypoint: 'bash'
   args: ['./build.sh']
   env:
-  - 'BUILD=$BUILD_ID'
-  - 'PROJECT=$PROJECT_ID'
-  - 'REV=$REVISION_ID'
   - 'NAME=$REPO_NAME'
   - 'BRANCH=$BRANCH_NAME'
   - 'SHORT_SHA=$SHORT_SHA'
