@@ -15,3 +15,10 @@ Released
 
 * Base Seldon Image with Dependancy
 * Image tagging with stable, nightly and version
+
+1.0.2
+
+=====
+
+* Code and Weights download at runtime
+* Updated .gitignore, .dockerignore and Dockerfile
