@@ -22,3 +22,9 @@ Released
 
 * Code and Weights download at runtime
 * Updated .gitignore, .dockerignore and Dockerfile
+
+1.0.3
+
+=====
+
+* Updated docker image name and Dockerfile

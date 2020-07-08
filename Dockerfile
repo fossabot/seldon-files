@@ -1,8 +1,5 @@
 FROM python:3.8-slim
 
-ARG MODEL_NAME
-ARG WEIGHTS_PATH
-
 COPY . /app
 WORKDIR /app
 RUN apt-get update
